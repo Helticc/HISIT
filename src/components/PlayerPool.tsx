@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Check, Smartphone } from "lucide-react";
+import { CheckCheck } from "lucide-react";
 
 export default function PlayerPool({
   players,
@@ -46,8 +48,9 @@ export default function PlayerPool({
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-6 px-4 py-2 sm:px-0">
       {/* Join an existing room (Captain 2 path) */}
       <div className="rounded-2xl border border-[#333333] bg-[#1f1f1f] p-5 shadow-md">
-        <h3 className="mb-2 text-sm font-bold tracking-wide text-white uppercase">
-          📱 Join Room
+        <h3 className="flex items-center gap-2 mb-2 text-sm font-bold tracking-wide text-white uppercase">
+          <Smartphone size={30}/>
+          Join Room
         </h3>
         <div className="flex flex-col gap-2 sm:flex-row">
           <input
@@ -131,9 +134,9 @@ export default function PlayerPool({
             <button
               disabled={players.length < 10}
               onClick={onContinue}
-              className="w-full rounded-xl bg-[#FF5500] px-8 py-4 text-sm font-black text-white shadow-md transition enabled:hover:scale-[1.02] enabled:active:scale-95 disabled:opacity-40"
+              className="flex items-center justify-center gap-2 w-full rounded-xl bg-[#FF5500] px-8 py-4 text-sm font-black text-white shadow-md transition enabled:hover:scale-[1.02] enabled:active:scale-95 disabled:opacity-40"
             >
-              CREATE NEW ROOM 🚀
+              CREATE NEW ROOM <CheckCheck size={30}/>
             </button>
           </div>
         </div>

@@ -221,25 +221,7 @@ export default function MapVeto({
       {vetoDone && decider && !veto.deciderReady && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-[#121212]/90 backdrop-blur-sm animate-in fade-in duration-300">
           <div className="w-full max-w-sm rounded-3xl border border-[#333333] bg-[#1f1f1f] p-8 text-center shadow-md">
-            <h3 className="text-sm font-black text-[#FF5500] uppercase tracking-widest mb-6 italic">DECIDER COIN FLIP</h3>
-            
-            <div className="relative w-32 h-32 mx-auto perspective-1000 mb-8">
-               <div 
-                 className="w-full h-full preserve-3d" 
-                 style={{ 
-                   transform: `rotateY(${deciderRot}deg)`,
-                   transition: isDeciderFlipping ? 'transform 2000ms cubic-bezier(0.2, 0.8, 0.2, 1)' : 'none'
-                 }}
-               >
-                  <div className="absolute inset-0 backface-hidden flex items-center justify-center rounded-full border-[6px] border-[#cc4400] bg-[#FF5500] shadow-[0_0_20px_rgba(255,85,0,0.3)]">
-                     <span className="text-4xl font-black text-white drop-shadow-md">A</span>
-                  </div>
-                  <div className="absolute inset-0 backface-hidden rotate-y-180 flex items-center justify-center rounded-full border-[6px] border-[#005a96] bg-[#0084ff] shadow-[0_0_20px_rgba(0,132,255,0.3)]">
-                     <span className="text-4xl font-black text-white drop-shadow-md">B</span>
-                  </div>
-               </div>
-            </div>
-
+            <h3 className="text-sm font-black text-[#FF5500] uppercase tracking-widest mb-6 italic">DECIDER RANDOM SIDE</h3>
             <p className="text-xl font-black text-white uppercase italic tracking-tighter mb-8">{decider.name}</p>
 
             {(canActForStep("A") || canActForStep("B") || canAdvance) && (

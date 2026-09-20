@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Hourglass } from "lucide-react";
 
 export default function CreateRoom({
   players,
@@ -18,7 +19,9 @@ export default function CreateRoom({
   if (readOnly) {
     return (
       <div className="mx-auto flex w-full max-w-xl flex-col items-center gap-4 rounded-2xl border border-[#333333] bg-[#1f1f1f] p-8 text-center">
-        <div className="text-3xl">⏳</div>
+        <div className="text-3xl">
+          <Hourglass size={24}/>
+        </div>
         <p className="text-sm text-white">
           The host is setting up the room. Your screen will follow automatically.
         </p>

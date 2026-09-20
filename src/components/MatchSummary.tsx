@@ -1,6 +1,7 @@
 import { MAP_POOL } from "../data/database";
 import type { MapState, MatchFormat, Team, TeamId, VetoLogEntry } from "../types";
 import { useState } from "react";
+import { RotateCcw } from "lucide-react";
 
 export default function MatchSummary({
   teamA,
@@ -151,9 +152,9 @@ export default function MatchSummary({
         {canRestart ? (
           <button
             onClick={onRestart}
-            className="w-full max-w-sm rounded-xl border border-[#FF5500] bg-[#FF5500] py-4 text-xs font-black text-white transition hover:bg-[#ff661a] active:scale-95 uppercase tracking-widest shadow-md"
+            className="flex items-center justify-center gap-2 w-full max-w-sm rounded-xl border border-[#FF5500] bg-[#FF5500] py-4 text-xs font-black text-white transition hover:bg-[#ff661a] active:scale-95 uppercase tracking-widest shadow-md"
           >
-            START NEW SESSION 🔄
+            START NEW SESSION <RotateCcw size={24}/>
           </button>
         ) : (
           <p className="text-[10px] font-black text-[#777777] animate-pulse uppercase tracking-widest">Waiting for host to restart session...</p>

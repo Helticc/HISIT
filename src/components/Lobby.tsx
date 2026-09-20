@@ -1,4 +1,8 @@
 import type { GameState } from "../game/state";
+import { Monitor } from "lucide-react";
+import { TabletSmartphone } from "lucide-react";
+import { Smartphone } from "lucide-react";
+import { UserRoundCheck } from "lucide-react";
 
 export default function Lobby({
   game,
@@ -23,7 +27,9 @@ export default function Lobby({
   if (isGuest) {
     return (
       <div className="mx-auto flex w-full max-w-xl flex-col items-center gap-5 rounded-2xl border border-emerald-800 bg-emerald-500/5 p-8 text-center">
-        <div className="text-4xl">📱</div>
+        <div className="text-4xl">
+          <Smartphone size={50} color="#00c887"/>
+        </div>
         <h3 className="text-lg font-bold text-emerald-300">Connected as Captain 2</h3>
         <p className="text-sm text-slate-400">
           You're in room <span className="font-mono font-bold text-white">{code}</span>.
@@ -42,7 +48,9 @@ export default function Lobby({
             onClick={onGoSolo}
             className="group rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-left shadow-xl transition hover:-translate-y-1 hover:border-orange-500 active:scale-95"
           >
-            <div className="mb-2 text-2xl">🖥️</div>
+            <div className="mb-2 text-2xl">
+              <Monitor size={24} color="CurrentColor"/>
+            </div>
             <h3 className="font-bold text-white group-hover:text-orange-300">Same Screen</h3>
             <p className="mt-1 text-sm text-slate-400">
               Both captains take turns on this device — pass it over when it's their turn.
@@ -52,7 +60,9 @@ export default function Lobby({
             onClick={onHostOnline}
             className="group rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-left shadow-xl transition hover:-translate-y-1 hover:border-blue-500 active:scale-95"
           >
-            <div className="mb-2 text-2xl">📱📱</div>
+            <div className="mb-2 text-2xl">
+              <TabletSmartphone size={24}/>
+            </div>
             <h3 className="font-bold text-white group-hover:text-blue-300">Two Devices</h3>
             <p className="mt-1 text-sm text-slate-400">
               Generates a room code. Captain 2 enters it on their own phone to join peer-to-peer.
@@ -80,7 +90,9 @@ export default function Lobby({
           ) : (
             <div className="flex flex-col items-center gap-6 animate-in fade-in zoom-in duration-300">
               <div className="flex flex-col items-center gap-2 rounded-2xl border border-emerald-900/50 bg-emerald-500/10 px-10 py-6 text-center shadow-[0_0_30px_rgba(16,185,129,0.1)]">
-                <span className="text-3xl">✅</span>
+                <span className="text-3xl">
+                  <UserRoundCheck size={50} color="#00c887"/>
+                </span>
                 <p className="text-xs font-black uppercase tracking-widest text-emerald-400">LEADER B HAS JOINED</p>
                 <p className="text-2xl font-black text-white italic uppercase">{game.teamB.captain}</p>
               </div>

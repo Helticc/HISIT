@@ -18,7 +18,8 @@ export default function StageShell({
       <div className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col px-4 py-6 sm:px-8">
         <header className="mb-8 flex flex-col items-center gap-4">
           <div className="flex items-center gap-3">
-            <img width={"50px"} src={"/faceit.png"}>
+            <img 
+              width={"50px"} src={"/faceit.png"}>
             </img>
             <h1 className="text-xl font-black tracking-[0.2em] text-white uppercase italic">
               HISIT

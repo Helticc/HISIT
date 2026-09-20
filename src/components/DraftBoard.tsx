@@ -1,4 +1,5 @@
 import type { Team, TeamId } from "../types";
+import { Check } from "lucide-react";
 
 const TEAM_SIZE = 5;
 
@@ -79,8 +80,10 @@ export default function DraftBoard({
 
       {draftComplete && (
         <div className="mt-4 flex flex-col items-center gap-4">
-          <div className="flex items-center gap-2 text-sm font-bold text-[#FF5500]">
-            <span className="text-xl">✅</span> ROSTERS FINALIZED
+          <div className="flex items-center gap-2 text-sm font-bold text-[#00c887]">
+            <span className="text-xl">
+              <Check size={30} color="#00c887"/>
+              </span> ROSTERS FINALIZED
           </div>
           {canContinue ? (
             <button

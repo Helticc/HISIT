@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import type { Team, TeamId } from "../types";
+import { HandCoins } from "lucide-react";
 
 export default function CoinFlip({
   teamA,
@@ -60,11 +61,11 @@ export default function CoinFlip({
         >
           {/* Coin Front */}
           <div className="absolute inset-0 backface-hidden flex items-center justify-center rounded-full border-[10px] border-[#cc4400] bg-[#FF5500] shadow-[0_0_20px_rgba(255,85,0,0.3)]">
-            <span className="text-6xl font-black text-white drop-shadow-md">A</span>
+            <span className="text-4xl font-black text-white drop-shadow-md">Heads</span>
           </div>
           {/* Coin Back */}
           <div className="absolute inset-0 backface-hidden rotate-y-180 flex items-center justify-center rounded-full border-[10px] border-[#005a96] bg-[#0084ff] shadow-[0_0_20px_rgba(0,132,255,0.3)]">
-            <span className="text-6xl font-black text-white drop-shadow-md">B</span>
+            <span className="text-6xl font-black text-white drop-shadow-md">Tails</span>
           </div>
         </div>
       </div>
@@ -75,8 +76,9 @@ export default function CoinFlip({
             onClick={handleFlip}
             className="w-full rounded-2xl bg-[#FF5500] px-8 py-5 text-sm font-black text-white shadow-md transition hover:bg-[#ff661a] active:scale-95 uppercase tracking-widest"
           >
-            FLIP TO START VETO 🪙
+            FLIP TO START VETO 
           </button>
+          
         )}
 
         {!winner && !isAnimating && !canFlip && (
